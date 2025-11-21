@@ -1,0 +1,555 @@
+/* Reset di base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Impostazioni di base per il body */
+html, body {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    font-family: 'Arial', sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #333;
+    background-color: #fff;
+}
+
+/* Link */
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Header */
+.header {
+    background-color: #441C1C;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    
+}
+
+/* Logo SVG */
+svg {
+    width: 103px;
+    height: 49px;
+}
+
+/* Navigazione */
+nav {
+    display: flex;
+    max-width: 1200px;
+    margin: 0 20px;
+    padding: 0;
+}
+
+nav ul {
+    display: flex;
+    gap: 30px;
+    list-style: none;
+    font-size: 15px;
+    color: #fff;
+}
+
+/* Linea verticale */
+.vertical-line {
+    width: 1px;
+    height: 20px;
+    background-color: #fff;
+    margin-right: 20px;
+}
+
+/* Hero section */
+.hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+/* Contenitore dell'immagine */
+.uno {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.uno img {
+    width: 100%;
+    height: auto; /* Rende l'altezza automatica in base all'immagine */
+    object-fit: cover;
+    display: block;
+}
+
+/* Ombra sotto l'immagine */
+.uno::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 40%;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.6), transparent);
+    pointer-events: none;
+}
+
+/* Testo sovrapposto all'immagine */
+.due {
+    position: absolute;
+    bottom: 40px;
+    left: 40px;
+    color: white;
+    max-width: 400px;
+    font-size: 20px;
+    line-height: 1.5;
+    padding: 10px;
+    box-sizing: border-box;
+}
+.due-2 {
+  position: absolute;
+  bottom: 40px;
+  left: 20px;
+  color: white;
+  max-width: 400px;
+  font-size: 40px;
+  
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+
+/* Card dei parchi */
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 60px;
+    max-width: 1000px;
+    margin: 80px auto;
+    padding: 0 20px;
+    margin-top: 200px;
+  }
+  
+  .card {
+    background: #441C1C;
+    border-radius: 6px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* allinea a sinistra */
+    text-align: left;
+    padding: 20px;
+}
+  
+  
+  .card img {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+    object-fit: cover;
+    margin-bottom: 20px;
+  }
+  
+  .card a {
+    color: #fff;
+    font-size: 16px;
+    line-height: 1.4;
+    text-decoration: none;
+  }
+  
+  /* Responsive per schermi piccoli */
+  @media (max-width: 768px) {
+    .card-container {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+
+/* Sezione descrittiva */
+
+.parchi-lista {
+    display: flex;
+    padding: 60px;
+   display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 colonne */
+  gap: 10px;
+}
+
+.parchi-lista button {
+  background-color: #441C1C; /* colore di sfondo verde */
+  color: white;              /* colore del testo */
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  text-align: center;
+}
+
+/* Effetto hover */
+.parchi-lista button:hover {
+  background-color: #9F5B5B; /* verde più scuro al passaggio */
+}
+
+.card:hover {
+  background-color: #9F5B5B; /* colore verde al passaggio */
+  color: white;
+  transform: translateY(-5px); /* leggero sollevamento */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* ombra */
+}
+
+.card:hover a {
+  color: white; /* testo bianco al passaggio */
+}
+
+.contenuto:hover {
+  background-color: #9F5B5B; /* verde al passaggio */
+  transform: translateY(-5px); /* sollevamento */
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2); /* ombra */
+}
+
+
+.section-1 {
+    padding: 20px;
+    text-align: left;
+    background-color: #441C1C;
+}
+
+.section-1 p {
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 25px;
+    color: #fff;
+}
+
+.preview {
+    background-color: white; /* sfondo esterno bianco */
+    padding: 60px 20px;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .contenuto {
+    background-color: #441C1C; /* sfondo scuro solo sulla "card" */
+    color: white;
+    max-width: 1000px;
+    width: 100%;
+    padding: 40px;
+    border-radius: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .testo {
+    flex: 1 1 400px;
+    max-width: 500px;
+  }
+  
+  .testo h1 {
+    font-size: 28px;
+    margin-bottom: 10px;
+  }
+  
+  .testo hr {
+    border: none;
+    border-top: 2px solid #ccc;
+    width: 60px;
+    margin: 15px 0;
+  }
+  
+  .testo p {
+    font-size: 16px;
+    line-height: 1.6;
+  }
+  
+  .immagine-preview {
+    flex: 1 1 300px;
+    max-width: 500px;
+  }
+  
+  .immagine-preview img {
+    width: 100%;
+    height: auto;
+    border-radius: 6px;
+    object-fit: cover;
+  }
+  
+
+/* Footer */
+footer {
+    background: #441C1C;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+}
+
+footer svg {
+    max-width: 100%; /* Ensure the SVG scales responsively */
+    height: auto;
+}
+
+/* Contenitore flex per h1 e h2 */
+.nav-fake {
+    display: flex; /* Affianca gli elementi */
+    gap: 20px; /* Aggiungi spazio tra h1 e h2 */
+}
+
+.nav-fake h1, .nav-fake h2 {
+    color: #fff;
+    margin: auto; 
+    font-size: 15px;
+}
+
+/*FINE HOME*/
+
+.griglia-parchi {
+  margin-top: 200px;
+  display: flex;           /* Assicurati che gli SVG siano distribuiti correttamente */
+  justify-content: center; /* Centra gli SVG orizzontalmente */
+  align-items: center;     /* Centra gli SVG verticalmente */
+  margin-bottom: 100px;
+}
+
+.griglia-parchi svg{
+  width: 900px;
+  height: auto;
+}
+
+.paragrafo {
+  max-width: 600px;         /* Limita la larghezza per migliorare la leggibilità */
+  margin: 0 auto;           /* Centra il contenitore orizzontalmente */
+  padding: 20px;            /* Aggiunge spazio interno */
+  text-align: left;         /* Allinea il testo a sinistra */
+  line-height: 1.7;         /* Interlinea al 150% */
+  font-size: 16px;           /* Dimensione del testo leggibile */
+  word-wrap: break-word;
+  margin-bottom: 80px;
+  margin-top: 80px;
+}
+
+.paragrafo p {
+  margin-bottom: 20px;      /* Aggiunge spazio tra i paragrafi */
+}
+
+.paragrafo hr{
+  gap: 40px;
+}
+
+.lineafinta {
+  display: flex;             /* Usa flexbox per disporre gli elementi orizzontalmente */
+  gap: 20px;                 /* Distanza tra la linea e il paragrafo */
+  align-items: flex-start;   /* Allinea gli elementi verticalmente in alto */
+  margin: 20px auto;         /* Aggiunge margini sopra e sotto e centra orizzontalmente */
+  max-width: 800px;          /* Limita la larghezza totale del contenitore */
+  margin-top: 100px;
+  margin-bottom: 100px;
+}
+
+.lineafinta p {
+  max-width: 600px;          /* Limita la larghezza del paragrafo */
+  margin: 0;                 /* Rimuove margini inutili */
+  padding: 0;                /* Rimuove il padding predefinito */
+  text-align: left;          /* Allinea il testo a sinistra */
+  line-height: 1.7;          /* Interlinea al 150% */
+  font-size: 16px;           /* Dimensione del testo */
+  word-wrap: break-word;     /* Forza il ritorno a capo per le parole lunghe */
+}
+
+.vertical-line-2 {
+  width: 3px;                  /* Spessore della linea verticale */
+  height: 80px;                /* Altezza della linea */
+  background-color: #3D3447;   /* Colore */
+  margin: 0 auto;              /* Centra la linea nel contenitore */
+  display: block;              /* Necessario se fosse inline */
+}
+
+.line-wrapper {
+  width: 80%;                  /* Limita la larghezza del contenitore */
+  margin: 0 auto;              /* Centra il contenitore nella pagina */
+  display: flex;
+  justify-content: center;     /* Centra la linea all’interno dell’80% */
+}
+
+
+.paragrafo-2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.titolo h1 {
+  text-align: left;
+  font-weight: 800;
+  margin-left: 20px;
+  margin-bottom: 60px;
+  margin-top:60px;
+}
+
+.elenco-1,
+.elenco-2,
+.elenco-3,
+.elenco-4,
+.elenco-5 {
+  display: flex;
+  align-items: center; /* centro verticale tra immagine e testo */
+  margin-bottom: 80px;  /* più spazio tra sezioni */
+  gap: 40px;
+  width: 100%;
+  line-height: 1.7; 
+}
+
+.elenco-1 img,
+.elenco-2 img,
+.elenco-3 img,
+.elenco-4 img,
+.elenco-5 img {
+  max-width: 300px;
+  height: auto;
+  border-radius: 10px;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.elenco-1 ol,
+.elenco-2 ol,
+.elenco-3 ol,
+.elenco-4 ol,
+.elenco-5 ol {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  max-width: 600px;
+}
+
+.elenco-1 > ol > li:first-child,
+.elenco-2 > ol > li:first-child,
+.elenco-3 > ol > li:first-child,
+.elenco-4 > ol > li:first-child,
+.elenco-5 > ol > li:first-child {
+  font-weight: 800;
+  font-size: 1.3rem;
+  margin-bottom: 15px;
+}
+
+.elenco-1 ul,
+.elenco-2 ul,
+.elenco-3 ul,
+.elenco-4 ul,
+.elenco-5 ul {
+  list-style-type: disc;
+  padding-left: 20px;
+  margin: 0;
+}
+
+.elenco-3 ul ul {
+  list-style-type: circle;
+  margin: 5px 0;
+}
+
+.lineafinta-centrata {
+  display: flex;                   /* Impostiamo un layout flessibile */
+  align-items: center;             /* Centriamo verticalmente il contenuto */
+  justify-content: center;         /* Centriamo orizzontalmente il contenuto */
+  width: 80%;                       /* La larghezza complessiva è l'80% della pagina */
+  margin: 40px auto;                /* Spazio tra la linea e altri elementi */
+  margin-bottom: 50px;
+}
+
+.vertical-line-centrata {
+  width: 3px;
+  height: 110px;
+  background-color: #441C1C;        /* Colore della linea */
+  margin: 0 20px;                   /* Margine tra la linea e il testo */
+}
+
+.lineafinta-centrata p {
+  margin: 0;                        /* Rimuoviamo margini predefiniti */
+  font-size: 18px;                  /* Impostiamo una dimensione del testo */
+  text-align: center;               /* Centriamo il testo */
+}
+
+.paragrafo h1 {
+  margin-bottom: 20px; /* Aggiunge uno spazio di 20px sotto l'h1 */
+  font-style: italic;
+}
+
+.img-orizontal {
+  display: flex;              /* Imposta il contenitore come un flex container */
+  justify-content: center;    /* Centra l'immagine orizzontalmente */
+  align-items: center;        /* Centra l'immagine verticalmente */
+  width: 100%;                /* Assicura che il contenitore abbia la larghezza al 100% */
+}
+
+.img-orizontal img {
+  max-width: 100%;            /* Assicura che l'immagine non esca dal contenitore */
+  height: auto;               /* Mantiene le proporzioni dell'immagine */
+}
+
+.paragrafo-3 {
+  display: flex;                         /* Flexbox per allineare l'immagine e il testo affiancati */
+  align-items: center;                   /* Centra verticalmente immagine e testo */
+  justify-content: center;               /* Centra orizzontalmente l'intero contenuto */
+  max-width: 1000px;                     /* Imposta una larghezza massima per il contenuto */
+  margin: 0 auto;                        /* Centra il contenuto nella pagina */
+  padding: 20px;
+  font-family: Arial, sans-serif;        /* Imposta il font */
+}
+
+.paragrafo-3 img {
+  max-width: 40%;                        /* Limita la larghezza dell'immagine al 40% */
+  height: auto;                          /* Mantiene le proporzioni dell'immagine */
+  border-radius: 10px;                   /* Rende l'immagine con bordi arrotondati */
+  object-fit: cover;                     /* Adatta l'immagine senza distorcerla */
+  margin-right: 40px;                    /* Aggiunge uno spazio tra l'immagine e il testo */
+}
+
+.paragrafo-3 .testo {
+  max-width: 60%;                        /* Limita la larghezza del testo al 60% */
+}
+
+.paragrafo-3 h1 {
+  font-weight: 800;                      /* Titolo in extra bold */
+  font-style: italic;                    /* Titolo in corsivo */
+  margin-bottom: 20px;                   /* Spazio sotto il titolo */
+}
+
+.paragrafo-3 p {
+  line-height: 1.7;                      /* Interlinea per il testo */
+  font-size: 1rem;                       /* Imposta la dimensione del testo */
+}
+
+.lineafinta-2 {
+  display: flex;
+    margin-top: 100px;
+  margin-left: 20px;         /* Spazio dal bordo sinistro della pagina */
+  margin-bottom: 50px;
+}
+
+.vertical-line-3 {
+  width: 3px;                /* Spessore linea */
+  height: 50px;              /* Altezza della linea */
+  background-color: #441C1C; /* Colore linea */
+  margin-right: 15px;        /* Spazio tra linea e testo */
+}
+
+.lineafinta-2 p {
+  font-size: 35px;
+  font-weight: 800;          /* Extra bold */
+  font-style: italic;
+  margin: 0;
+  padding: 0;
+}
